@@ -18,7 +18,7 @@ The SQL code is below:
      WHEN `Current Fiscal Month` = 1 THEN 'Y'  
      WHEN (`Current Fiscal Month` = `Fiscal Month` OR `YTD Flag` = 'N') THEN 'N' ELSE 'Y' END AS `YTD`,
 
-#DAX
+## DAX
 Another challenge was to change the **formulas in DAX**.
 This was done for annual operating plan (AOP), forecast, and actuals.
 The DAX formulas show the code for AOP, depending on if you wanted to see QTD or YTD amounts this code specifies the returned values.
