@@ -3,7 +3,7 @@
 
 ## SQL
 In this project I visualized **operating expenses** which actualize at the end of the month. 
-This required me to **changes the times frame** of the dashboard.
+This required me to **change the timeframe** of the dashboard to show the prior month.
 I used **SQL** to change the Quarter-to-Date (QTD) and Year-to-date (YTD) to reflect the period as if it was the month before.
 The SQL code is below:
 
@@ -19,7 +19,7 @@ The SQL code is below:
      WHEN (`Current Fiscal Month` = `Fiscal Month` OR `YTD Flag` = 'N') THEN 'N' ELSE 'Y' END AS `YTD`,
 
 ## DAX
-Another challenge was to change the **formulas in DAX**.
+Because of the shifted timeframe the **formulas in DAX** needed to be changed as well.
 This was done for annual operating plan (AOP), forecast, and actuals.
 The DAX formulas show the code for AOP, depending on if you wanted to see QTD or YTD amounts this code specifies the returned values.
 
