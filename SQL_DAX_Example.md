@@ -1,4 +1,4 @@
-# SQL and DAX with Power BI
+# SQL and DAX Example with Power BI
 ![](/images/OPEX1.png)
 
 ## SQL
