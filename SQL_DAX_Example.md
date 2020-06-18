@@ -25,9 +25,8 @@ The DAX formulas show the code for AOP, depending on if you wanted to see QTD or
 
 
      SUMX ( 'Query1' ,
-     IF ( [Current Fiscal Year] <> YEAR ( TODAY () ) && [Flag] = "Y" && [Current Fiscal Year] = [Fiscal Year], [AOP P$],
      IF ( [Current Fiscal Month] = 1 && [Period] = "QTD" && [Prior Fiscal Year] = [Fiscal Year] && [Fiscal Quarter] = 4, [AOP P$],
      IF ( [Current Fiscal Month] = 1 && [Period] = "YTD" && [Prior Fiscal Year] = [Fiscal Year], [AOP P$],
      IF ( [Current Fiscal Month] > 1 && [Period] = "QTD" && [Current Fiscal Year] = [Fiscal Year] && ([Current Fiscal Month] = 4 || 7 || 10) && [Flag] = "Y", [AOP P$],
      IF ( [Current Fiscal Month] > 1 && [Period] = "QTD" && [Current Fiscal Year] = [Fiscal Year] && ([Current Fiscal Month] <> 4 && 7 && 10) && [Current Fiscal Quarter] = [Fiscal Quarter] , [AOP P$],
-     IF ( [Current Fiscal Month] > 1 && [Period] = "YTD" && [Current Fiscal Year] = [Fiscal Year], [AOP P$], BLANK () )))))))
+     IF ( [Current Fiscal Month] > 1 && [Period] = "YTD" && [Current Fiscal Year] = [Fiscal Year], [AOP P$], BLANK () ))))))
