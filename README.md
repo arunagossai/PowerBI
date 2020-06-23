@@ -1,2 +1,2 @@
 # PowerBI Projects
-These are finance examples using data that is confidential. The numbers are eliminated or altered, and there is no access to the original PBI file
+These are finance examples using data been distorted. The names/numbers have either been altered or erased in the dashoard picture. There is no access to the original PBI file
