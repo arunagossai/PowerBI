@@ -2,13 +2,16 @@
 
 ![](images/BIOTECH.png)
 
-This project primmarily dealt with creating a **key** build a relationship between an **Excel** spreadsheet and a data table pulled **via SQL**,
-Because the two datasets were from different data sources, consolidating them required cleaning prior and cross-functional collaboration.
-One feature utilized within the **query editor** in Power BI was unpivoting/pivoting columns. This doupled or tripled records which
-incorrectly inflated revenue. As a result, I divided the acutals by the appropriate amount, shown in the code below:
+This project primmarily dealt with creating a **unique key** build a relationship between an **Excel** spreadsheet and a **Redshift data pull via SQL**. Because the two datasets were from different data sources, consolidating them required cleaning and cross-functional collaboration. To make the unique key the following actions were performed in the **query editor**:
+* deleting duplicate records
+* deleting blanks 
+* merging datasets
+* unpivoting columns
 
-    Revenue = 
-    Merge1[Amount P$]/ 
-    CALCULATE ( DISTINCTCOUNT(Merge1[Attribute]) , ALLEXCEPT(Merge1 , Merge1[NSGN Name]))
+Unpivoting the columns doupled/tripled all records in the merged dataset, incorrectly inflating revenue. As a result, I divided the acutals by 2 or 3 depending on if they were doubled or tripled. This was done with the code below:
 
-This measure was then used to create other measures such as quarter-to-date revenue and prior year growth. 
+    NewRevenue = 
+    MergeData[Revenue]/ 
+    CALCULATE ( DISTINCTCOUNT(MergeData[Attribute]) , ALLEXCEPT(MergeData , MergeData[Customer_Name]))
+
+This measure was then used to create other measures such as quarter-to-date revenue and prior year growth.
